@@ -1,0 +1,465 @@
+
+
+/* General Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f6fa;
+    color: #333;
+}
+
+
+/* Navigation */
+
+.navbar {
+    background: #142d4e;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #f5c16c;
+    font-size: 25px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #f5c16c;
+}
+
+
+/* Hero Section */
+
+.hero {
+    min-height: 500px;
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    background: #e9a83d;
+    color: #142d4e;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #f5c16c;
+    transform: translateY(-3px);
+}
+
+
+/* Common Sections */
+
+section {
+    padding: 60px 8%;
+}
+
+section h2 {
+    text-align: center;
+    color: #142d4e;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* About */
+
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* Rooms */
+
+.rooms {
+    background: #f5f6fa;
+}
+
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.room-card {
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    transition: .3s;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+}
+
+.room-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.room-card h3 {
+    margin: 18px 0 10px;
+    color: #142d4e;
+}
+
+.room-card p {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.room-card h4 {
+    color: #d18a20;
+    margin-bottom: 20px;
+}
+
+
+/* Booking Form */
+
+.booking {
+    background: white;
+}
+
+.booking > p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.booking form {
+    max-width: 650px;
+    margin: auto;
+    background: #f5f6fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #142d4e;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #e9a83d;
+}
+
+
+/* Price Summary */
+
+.price-box {
+    background: #e8edf5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.price-box h3 {
+    color: #142d4e;
+    margin-bottom: 12px;
+}
+
+.price-box p {
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+
+/* Submit Button */
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    background: #142d4e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    background: #e9a83d;
+    color: #142d4e;
+}
+
+.submit-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+
+/* Messages */
+
+#message {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+}
+
+#message.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+}
+
+#message.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Facilities */
+
+.facilities {
+    background: #eef1f6;
+}
+
+.facility-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.facility {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    font-weight: bold;
+}
+
+
+/* Contact */
+
+.contact {
+    background: #142d4e;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #f5c16c;
+}
+
+.contact p {
+    margin: 12px 0;
+}
+
+.contact a {
+    color: #f5c16c;
+}
+
+
+/* Footer */
+
+footer {
+    background: #0b1c30;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* Responsive Design */
+
+@media(max-width: 1000px) {
+    .room-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .room-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .booking form {
+        padding: 20px;
+    }
+}
+.login-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    background: white;
+    font-size: 13px;
+}
+
+th {
+    background: #142d4e;
+    color: white;
+}
+
+td, th {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #a71d2a;
+}
+
+
+/* Upgrade: customer accounts, availability, tables and dashboard */
+.availability-btn, .small-btn {
+  display: inline-block; background: #e9a83d; color: #142d4e;
+  border: 0; border-radius: 5px; padding: 11px 16px; font-weight: bold;
+  cursor: pointer; text-decoration: none; margin: 5px 4px 12px 0;
+}
+.availability-btn:disabled { opacity: .6; cursor: wait; }
+#availabilityMessage, #message, .success, .error {
+  margin: 12px 0; padding: 12px; border-radius: 5px;
+}
+#availabilityMessage.success, .success { background: #d4edda; color: #155724; }
+#availabilityMessage.error, .error { background: #f8d7da; color: #721c24; }
+.login-prompt, .auth-section form { max-width: 650px; margin: auto; }
+.login-prompt { text-align: center; background: #f5f6fa; padding: 30px; border-radius: 10px; }
+.login-prompt .btn { margin: 12px 5px; }
+.auth-section { min-height: 80vh; }
+.auth-switch { text-align: center; margin-top: 18px; }
+.auth-switch a, .receipt-link { color: #142d4e; font-weight: bold; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); gap: 16px; margin: 20px 0 35px; }
+.stat-card { background: white; border-left: 5px solid #e9a83d; padding: 22px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.stat-card span { display: block; color: #555; margin-bottom: 10px; }
+.stat-card strong { display: block; color: #142d4e; font-size: 25px; overflow-wrap: anywhere; }
+.table-wrap { width: 100%; overflow-x: auto; }
+table { min-width: 900px; width: 100%; }
+.status { display: inline-block; padding: 5px 9px; border-radius: 20px; font-weight: bold; font-size: 12px; }
+.status.confirmed { background: #d4edda; color: #155724; }
+.status.cancelled { background: #f8d7da; color: #721c24; }
+.inline-form { display: inline-block; margin: 4px; }
+.small-btn { padding: 7px 9px; font-size: 12px; margin: 4px; }
+.empty-state { text-align: center; padding: 30px; background: white; border-radius: 8px; }
+.table-heading { margin-top: 35px; }
+@media(max-width: 850px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width: 500px) { .stats-grid { grid-template-columns: 1fr; } }

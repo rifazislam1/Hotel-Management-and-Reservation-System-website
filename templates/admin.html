@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Admin Dashboard</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<header><nav class="navbar"><h2 class="logo">Hotel Admin Panel</h2><ul><li><a href="{{ url_for('home') }}">Home</a></li><li><a href="{{ url_for('admin_logout') }}">Logout</a></li></ul></nav></header>
+<section><h2>Admin Dashboard</h2>
+<div class="stats-grid">
+<div class="stat-card"><span>Total Bookings</span><strong>{{ total_bookings }}</strong></div>
+<div class="stat-card"><span>Confirmed</span><strong>{{ confirmed_bookings }}</strong></div>
+<div class="stat-card"><span>Cancelled</span><strong>{{ cancelled_bookings }}</strong></div>
+<div class="stat-card"><span>Revenue from confirmed bookings</span><strong>₹{{ "{:,.2f}".format(revenue|float) }}</strong></div>
+</div>
+<h2 class="table-heading">Customer Reservations</h2>
+{% if bookings %}<div class="table-wrap"><table><thead><tr><th>ID</th><th>Customer</th><th>Email</th><th>Phone</th><th>Room</th><th>Check-in</th><th>Check-out</th><th>Guests</th><th>Nights</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+{% for b in bookings %}<tr><td>{{ b.id }}</td><td>{{ b.customer_name }}</td><td>{{ b.email }}</td><td>{{ b.phone }}</td><td>{{ b.room_type }}</td><td>{{ b.check_in }}</td><td>{{ b.check_out }}</td><td>{{ b.guests }}</td><td>{{ b.nights }}</td><td>₹{{ b.total_price }}</td><td><span class="status {{ b.status }}">{{ b.status|title }}</span></td><td>
+<a class="small-btn" href="{{ url_for('receipt', booking_id=b.id) }}">Receipt</a>
+{% if b.status == 'confirmed' %}<form class="inline-form" method="POST" action="{{ url_for('admin_cancel_booking', booking_id=b.id) }}" onsubmit="return confirm('Cancel this booking?')"><button class="delete-btn" type="submit">Cancel</button></form>{% endif %}
+</td></tr>{% endfor %}</tbody></table></div>{% else %}<p class="empty-state">No reservations found.</p>{% endif %}
+</section><footer>Grand Palace Hotel - Admin Dashboard</footer></body></html>
