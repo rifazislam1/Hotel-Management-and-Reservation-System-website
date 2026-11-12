@@ -168,9 +168,9 @@ To access the admin dashboard:
 
 Change any default admin credentials before deployment.
 
-## 🚀 Future Enhancements
+## 🚀 FEATURES
 
-The following features can be added to improve the project:
+:
 
 - Room availability checking and double-booking prevention.
 - Customer registration and login.
